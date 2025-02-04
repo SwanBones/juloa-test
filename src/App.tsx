@@ -10,6 +10,7 @@ import { GameInfo, LoginInfo, PlayerInfo } from "./types";
 import GameCanvas from "./components_ui/GameCanvas";
 import { message } from "antd";
 import KeyboardListener from "./components_ui/KeyboardListener";
+import InGameCard from "./components_ui/InGameCard";
 
 function App() {
 	const [messageApi, contextHolder] = message.useMessage();
@@ -71,7 +72,13 @@ function App() {
 				{/*if we're not in the game*/}
 				{!ingame && <MenuCard userId={userId} onFinish={manageEnterLobby} />}
 				{/* if server responded correctly and there is data */}
-				{ingame && gameInfo && <GameCanvas gameInfo={gameInfo} />}
+				{ingame && gameInfo && (
+					<div>
+						<InGameCard gameInfo={gameInfo} userId={userId} />
+						<GameCanvas gameInfo={gameInfo} />
+					</div>
+				)}
+
 				<KeyboardListener
 					handleUpPress={() => {
 						moveSelf(0, 1);

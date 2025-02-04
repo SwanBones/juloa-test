@@ -14,6 +14,7 @@ export type PlayerInfo = {
 	username: string;
 	position: PlayerPosition;
 	color: string;
+	id?: string;
 };
 
 export type GameInfo = {
