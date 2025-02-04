@@ -1,6 +1,8 @@
+import { AggregationColor } from "antd/es/color-picker/color";
+
 export type LoginInfo = {
 	username: string;
-	color: string;
+	color: AggregationColor;
 };
 
 export type PlayerPosition = {
@@ -16,5 +18,5 @@ export type PlayerInfo = {
 
 export type GameInfo = {
 	room: number;
-	playerInfo: PlayerInfo[];
+	playerInfo: Record<string, PlayerInfo>;
 };
