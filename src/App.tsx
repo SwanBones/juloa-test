@@ -1,6 +1,6 @@
 import config from "./config";
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, onValue, remove, update } from "firebase/database";
+import { getDatabase, ref, set, onValue, update } from "firebase/database";
 import { getAuth, signInAnonymously } from "firebase/auth";
 import { useEffect, useState } from "react";
 import "./styles/App.css";

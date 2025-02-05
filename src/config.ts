@@ -9,8 +9,7 @@
 const config = {
 	apiKey: "AIzaSyAz5SipUqQiRfO_Th3CFL8-GEYvL4HD0oM",
 	authDomain: "portfolio-xuan-boone.firebaseapp.com",
-	databaseURL:
-		"https://portfolio-xuan-boone-default-rtdb.europe-west1.firebasedatabase.app",
+	databaseURL: "https://portfolio-xuan-boone-default-rtdb.europe-west1.firebasedatabase.app",
 	projectId: "portfolio-xuan-boone",
 	storageBucket: "portfolio-xuan-boone.firebasestorage.app",
 	messagingSenderId: "966968747196",
