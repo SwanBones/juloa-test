@@ -1,7 +1,6 @@
 import { LoginInfo } from "@/types";
 import { Button, Card, Input, Form, ColorPicker } from "antd";
 import { useForm } from "antd/es/form/Form";
-import { useState } from "react";
 import { generateRandomHexColor } from "../utils/generateValues";
 import { AggregationColor } from "antd/es/color-picker/color";
 type MenuCardProps = {
@@ -10,7 +9,7 @@ type MenuCardProps = {
 };
 
 export default function MenuCard(props: MenuCardProps) {
-	const { userId, onFinish } = props;
+	const { onFinish } = props;
 	const [form] = useForm();
 	const randomColor = generateRandomHexColor();
 	const aggregationColorInstance = new AggregationColor(randomColor);

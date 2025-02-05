@@ -8,6 +8,11 @@ const references = {
 	players(room: number) {
 		return `room/${room}/player`;
 	},
+	roomStatus(room: number) {
+		// if room is full
+		//TODO: (player goes into a room, and marks the room full if another player is already inside it.)
+		return `room/${room}/status`;
+	},
 	player(room: number, userId: string) {
 		return `room/${room}/player/${userId}`;
 	},

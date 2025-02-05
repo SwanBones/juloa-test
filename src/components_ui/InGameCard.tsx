@@ -1,7 +1,6 @@
-import { GameInfo, LoginInfo, PlayerInfo } from "@/types";
+import { GameInfo } from "@/types";
 import { Card, Flex } from "antd";
 
-import { AggregationColor } from "antd/es/color-picker/color";
 type InGameCardProps = {
 	gameInfo: GameInfo;
 	userId: string;

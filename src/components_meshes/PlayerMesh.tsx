@@ -1,5 +1,3 @@
-import { useRef, useState } from "react";
-import { useFrame } from "@react-three/fiber";
 import { PlayerPosition } from "@/types";
 type PlayerMeshProps = {
 	color: string;

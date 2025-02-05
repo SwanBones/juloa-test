@@ -1,8 +1,6 @@
 import { GameInfo } from "@/types";
-import React from "react";
 import { Canvas } from "@react-three/fiber";
 import PlayerMesh from "../components_meshes/PlayerMesh";
-import { Controls } from "three";
 
 type GameCanvasProps = {
 	gameInfo: GameInfo;

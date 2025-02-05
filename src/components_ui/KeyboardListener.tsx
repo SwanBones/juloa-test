@@ -1,4 +1,3 @@
-import { LoginInfo } from "@/types";
 import { useEffect, useState } from "react";
 
 type KeyboardListenerProps = {
