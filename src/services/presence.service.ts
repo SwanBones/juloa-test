@@ -19,15 +19,10 @@ export const triggerOnDisconnect = (roomId: number, userId: string, db: Database
 
 		const onDisconnectRef = onDisconnect(presenceRef);
 		const onDisconnectDateRef = onDisconnect(statusChangeDateRef);
-		onDisconnectRef
-			.set("offline")
-			.then(() => {
-				console.log(`triggerOnDisconnect set for user ${userId} in room ${roomId}`);
-			})
-			.catch((err) => {
-				console.error("could not establish onDisconnect event", err);
-			});
+
+		onDisconnectRef.set("offline");
 		onDisconnectDateRef.set(Date.now().toString);
+
 		onDisconnectDateRef.cancel();
 		onDisconnectRef.cancel();
 	} catch (err) {

@@ -16,7 +16,6 @@ export default function ButtonHeader(props: HeaderInGameProps) {
 					{buttonIcon}
 				</Button>
 			</Tooltip>
-
 			<h3 style={{ marginLeft: 10 }}>{title}</h3>
 		</Flex>
 	);
