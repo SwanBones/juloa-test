@@ -3,28 +3,28 @@ import * as functionsV2 from "firebase-functions/v2";
 import admin from "firebase-admin";
 
 admin.initializeApp({});
-//these are just for testing, for now.
+//Je n'ai finialement pas utilisé cloud functions par contrainte de temps.
 
-export const helpworld = functionsV2.https.onRequest((request, response) => {
-	response.send("help world!");
-});
+// export const helpworld = functionsV2.https.onRequest((request, response) => {
+// 	response.send("help world!");
+// });
 
-export const api = functionsV2.https.onRequest((req, res) => {
-	switch (req.method) {
-		case "GET":
-			res.send("this was GET");
-			break;
-		case "POST":
-			const body = req.body;
-			res.send(body);
-			break;
-		case "DELETE":
-			res.send("this was DELETE");
-			break;
-		default:
-			res.send("this was default");
-	}
-});
+// export const api = functionsV2.https.onRequest((req, res) => {
+// 	switch (req.method) {
+// 		case "GET":
+// 			res.send("this was GET");
+// 			break;
+// 		case "POST":
+// 			const body = req.body;
+// 			res.send(body);
+// 			break;
+// 		case "DELETE":
+// 			res.send("this was DELETE");
+// 			break;
+// 		default:
+// 			res.send("this was default");
+// 	}
+// });
 
 // export const deletePlayerOnOffline = functionsV1
 // 	.region("europe-west4")

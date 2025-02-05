@@ -1,7 +1,28 @@
 {
-  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
-  "rules": {
-    ".read": false,
-    ".write": false
-  }
+	"rules": {
+		".read": "auth != null",
+		".write": "auth != null",
+		"room": {
+			"$roomId": {
+				"player": {
+					"$playerId": {
+						".read": "auth != null",
+						".write": "auth != null ",
+						"status": {
+							".write": "auth != null"
+						},
+						"position": {
+							".write": "auth != null"
+						},
+						"username": {
+							".validate": "newData.isString()"
+						},
+						"statusChangeDate": {
+							".validate": "newData.isNumber()"
+						}
+					}
+				}
+			}
+		}
+	}
 }

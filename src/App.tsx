@@ -35,8 +35,11 @@ function App() {
 			if (data) {
 				// when players all quit , the database is empty. Handle this case when the user logs on
 				const playersToKick = Object.entries(data).filter(
-					//TODO: this is not clean, a better solution would be to have a trigger
-					// in cloud functions that deletes users when their status goes "offline"
+					//TODO: this is not clean, is also an issue because using this method, technically any player can kick any player.
+					// a better solution would be to have a trigger in cloud functions that
+					// deletes users when their status goes "offline".
+					// update database rules to only allow users to update their own data.
+
 					([id, player]) => {
 						if (player.statusChangeDate) {
 							return (
@@ -65,7 +68,7 @@ function App() {
 	}, []);
 
 	const app = initializeApp(config);
-	const db = getDatabase();
+	const db = getDatabase(); //TODO should handle error when db doesnt connect
 	const auth = getAuth();
 
 	const showErrorMessage = (e?: string) => {
