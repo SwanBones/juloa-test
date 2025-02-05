@@ -38,18 +38,18 @@ export default function KeyboardListener(props: KeyboardListenerProps) {
 					break;
 				case "ArrowDown":
 					if (!downKeyPressed) {
-						setUpKeyPressed(true);
+						setDownKeyPressed(true);
 						handleDownPress && handleDownPress();
 					}
 					break;
 				case "ArrowRight":
-					if (!upKeyPressed) {
+					if (!rightKeyPressed) {
 						setRightKeyPressed(true);
 						handlelLeftPress && handlelLeftPress();
 					}
 					break;
 				case "ArrowLeft":
-					if (!downKeyPressed) {
+					if (!leftKeyPressed) {
 						setLeftKeyPressed(true);
 						handlerRightPress && handlerRightPress();
 					}
@@ -64,7 +64,7 @@ export default function KeyboardListener(props: KeyboardListenerProps) {
 					handleUpRelease && handleUpRelease();
 					break;
 				case "ArrowDown":
-					setUpKeyPressed(false);
+					setDownKeyPressed(false);
 					handleDownRelease && handleDownRelease();
 					break;
 				case "ArrowRight":
@@ -85,11 +85,7 @@ export default function KeyboardListener(props: KeyboardListenerProps) {
 			window.removeEventListener("keydown", handleKeyDown);
 			window.removeEventListener("keyup", handleKeyUp);
 		};
-	}, [upKeyPressed]);
-
-	const myFunction = () => {
-		console.log("Function triggered by up arrow key!");
-	};
+	}, [upKeyPressed, downKeyPressed, rightKeyPressed, leftKeyPressed]);
 
 	return <div></div>;
 }

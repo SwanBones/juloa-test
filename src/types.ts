@@ -15,9 +15,11 @@ export type PlayerInfo = {
 	position: PlayerPosition;
 	color: string;
 	id?: string;
+	status?: "online" | "offline";
+	statusChangeDate?: number;
 };
 
-export type GameInfo = {
+export type GameData = {
 	room: number;
 	playerInfo: Record<string, PlayerInfo>;
 };

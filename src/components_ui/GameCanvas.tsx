@@ -1,9 +1,9 @@
-import { GameInfo } from "@/types";
+import { GameData } from "@/types";
 import { Canvas } from "@react-three/fiber";
 import PlayerMesh from "../components_meshes/PlayerMesh";
 
 type GameCanvasProps = {
-	gameInfo: GameInfo;
+	gameInfo: GameData;
 };
 export default function GameCanvas(props: GameCanvasProps) {
 	const { gameInfo } = props;
@@ -11,24 +11,22 @@ export default function GameCanvas(props: GameCanvasProps) {
 		<div id="game-frame">
 			<Canvas>
 				<ambientLight intensity={Math.PI / 2} />
-				<spotLight
-					position={[10, 10, 10]}
-					angle={0.15}
-					penumbra={1}
-					decay={0}
-					intensity={Math.PI}
-				/>
+				<spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
 				<pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
 				{gameInfo.playerInfo &&
 					Object.entries(gameInfo.playerInfo).map(([id, player]) => {
 						return (
-							<PlayerMesh
-								color={player.color}
-								position={{
-									x: player.position.x,
-									y: player.position.y,
-								}}
-							/>
+							id &&
+							player.status === "online" && (
+								<PlayerMesh
+									key={id}
+									color={player.color}
+									position={{
+										x: player.position.x,
+										y: player.position.y,
+									}}
+								/>
+							)
 						);
 					})}
 			</Canvas>

@@ -6,10 +6,11 @@ import { AggregationColor } from "antd/es/color-picker/color";
 type MenuCardProps = {
 	userId: string;
 	onFinish: (values: LoginInfo) => void;
+	loading: boolean;
 };
 
 export default function MenuCard(props: MenuCardProps) {
-	const { onFinish } = props;
+	const { onFinish, loading } = props;
 	const [form] = useForm();
 	const randomColor = generateRandomHexColor();
 	const aggregationColorInstance = new AggregationColor(randomColor);
@@ -17,6 +18,13 @@ export default function MenuCard(props: MenuCardProps) {
 	return (
 		<div>
 			<Card title="Moving squares game">
+				{/* <Button
+					onClick={() => {
+						console.log(Date.now());
+					}}
+				>
+					test
+				</Button> */}
 				<Form
 					form={form}
 					initialValues={{ color: aggregationColorInstance }}
@@ -24,11 +32,7 @@ export default function MenuCard(props: MenuCardProps) {
 					onFinish={onFinish}
 					variant={"filled"}
 				>
-					<Form.Item
-						name="username"
-						label="Username"
-						rules={[{ required: true }]}
-					>
+					<Form.Item name="username" label="Username" rules={[{ required: true }]}>
 						<Input placeholder="Enter username" />
 					</Form.Item>
 					<Form.Item name="color" label="Color">
@@ -40,6 +44,7 @@ export default function MenuCard(props: MenuCardProps) {
 								form.validateFields();
 							}}
 							htmlType="submit"
+							loading={loading}
 						>
 							Enter Lobby
 						</Button>

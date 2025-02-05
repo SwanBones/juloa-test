@@ -1,0 +1,11 @@
+13:57:09.132 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+13:57:09.250 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+13:57:09.662 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - portfolio-xuan-boone-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 92ms, init: 0ms
+13:57:19.421 [FirebaseWorkerPool-1-2] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace fake-server, but the emulator is configured for portfolio-xuan-boone-default-rtdb. To 
+opt-out of single project mode add/set the singleProjectMode: false property in 
+the firebase.json emulators config. 
+13:57:19.423 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - fake-server successfully activated FBKV (SurveyIdle(0)) wait: 1ms, init: 0ms
+13:57:19.456 [NamespaceSystem-blocking-namespace-operation-dispatcher-9] INFO com.firebase.core.namespace.StateManager - Namespace portfolio-xuan-boone-default-rtdb status Active to Active
+13:57:19.456 [NamespaceSystem-blocking-namespace-operation-dispatcher-10] INFO com.firebase.core.namespace.StateManager - Namespace fake-server status Active to Active
+13:57:19.471 [NamespaceSystem-blocking-namespace-operation-dispatcher-10] INFO com.firebase.core.namespace.StateManager - Namespace portfolio-xuan-boone-default-rtdb status Active to Active

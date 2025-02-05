@@ -1,10 +1,15 @@
-import * as functions from "firebase-functions";
+import * as functionsV2 from "firebase-functions/v2";
+// import * as functionsV1 from "firebase-functions/v1";
+import admin from "firebase-admin";
 
-export const helpworld = functions.https.onRequest((request, response) => {
+admin.initializeApp({});
+//these are just for testing, for now.
+
+export const helpworld = functionsV2.https.onRequest((request, response) => {
 	response.send("help world!");
 });
 
-export const api = functions.https.onRequest((req, res) => {
+export const api = functionsV2.https.onRequest((req, res) => {
 	switch (req.method) {
 		case "GET":
 			res.send("this was GET");
@@ -20,3 +25,20 @@ export const api = functions.https.onRequest((req, res) => {
 			res.send("this was default");
 	}
 });
+
+// export const deletePlayerOnOffline = functionsV1
+// 	.region("europe-west4")
+// 	.database.ref("/room/{roomId}/player/{uid}/status")
+// 	.onWrite(async (change, context) => {
+// 		const newStatus = change.after.val();
+// 		const { roomId, uid } = context.params;
+
+// 		if (newStatus === "offline") {
+// 			try {
+// 				await admin.database().ref(`/room/${roomId}/player/${uid}`).remove();
+// 				console.log(`Player ${uid} removed from room ${roomId}`);
+// 			} catch (error) {
+// 				console.error(`Failed to remove player ${uid}:`, error);
+// 			}
+// 		}
+// 	});

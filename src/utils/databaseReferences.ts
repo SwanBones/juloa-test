@@ -16,6 +16,14 @@ const references = {
 	player(room: number, userId: string) {
 		return `room/${room}/player/${userId}`;
 	},
+	playerStatus(room: number, userId: string) {
+		//player offline or online
+		return `room/${room}/player/${userId}/status`;
+	},
+	playerStatusDate(room: number, userId: string) {
+		//player offline or online
+		return `room/${room}/player/${userId}/statusChangeDate`;
+	},
 	playerUsername(room: number, userId: string) {
 		return `room/${room}/player/${userId}/username`;
 	},
